@@ -1,5 +1,5 @@
-NAME = megaphone
-SRC = megaphone.cpp
+NAME = my_awesome_phonebook
+SRC = phonebook.cpp
 #HEADERFILES = -I 
 OBJFILES = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
