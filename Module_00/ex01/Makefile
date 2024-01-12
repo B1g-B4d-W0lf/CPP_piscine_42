@@ -1,21 +1,23 @@
 NAME = my_awesome_phonebook
-SRC = phonebook.cpp
-HEADERFILES = -I 
+SRC = PhoneBook.cpp \
+Contact.cpp \
+main.cpp
+HEADERFILES = -I ./Includes
 OBJFILES = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 #
 
 $(NAME): $(OBJFILES)
-	@echo "\033[1;92mMaking $<...\033[0m"
+	@echo "\033[1;92mMaking $@...\033[0m"
 	@$(CC) $(CFLAGS) $(OBJFILES) -o $(NAME)
 	@echo "\033[5;95mMADE !\033[0m"
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADERFILES)
+%.o: %.cpp
 	@echo "\033[1;92mCompiling $<...\033[0m"
-	@$(CC) -c $(CFLAGS) -o $@ $< 
+	@$(CC) -c $(CFLAGS) $(HEADERFILES) -o $@ $<
 
 clean:
 	@echo "\033[1;96mObject Files Cleaned\033[0m"
