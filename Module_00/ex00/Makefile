@@ -13,7 +13,7 @@ $(NAME): $(OBJFILES)
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADERFILES)
+%.o: %.cpp
 	@echo "\033[1;92mCompiling $<...\033[0m"
 	@$(CC) -c $(CFLAGS) -o $@ $< 
 
