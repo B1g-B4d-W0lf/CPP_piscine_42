@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 19:17:06 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/11 18:33:27 by wfreulon         ###   ########.fr       */
+/*   Created: 2024/01/13 20:14:12 by wfreulon          #+#    #+#             */
+/*   Updated: 2024/01/13 21:34:19 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <stdlib.h>
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 
 class Contact
 {
@@ -28,6 +30,9 @@ class Contact
 		void	fillNumber(void);
 		void	fillSecret(void);
 		int		ft_Alpha(std::string input);
+		int		ft_Digit(std::string input);
+		void	DisplayContact(int i);
+		void	DisplayInfos(void);
 
 	private:
 		std::string firstname;
