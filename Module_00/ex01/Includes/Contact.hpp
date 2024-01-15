@@ -6,7 +6,7 @@
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 20:14:12 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/13 21:34:19 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/01/15 19:53:59 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Contact
 		void	fillSecret(void);
 		int		ft_Alpha(std::string input);
 		int		ft_Digit(std::string input);
-		void	DisplayContact(int i);
+		void	DisplayContact(char i);
 		void	DisplayInfos(void);
 
 	private:

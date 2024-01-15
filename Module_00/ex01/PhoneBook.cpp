@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:34:08 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/14 17:17:56 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/01/15 20:27:16 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Includes/PhoneBook.hpp"
 #include "Includes/Contact.hpp"
-
+#include <stdlib.h>
 PhoneBook::PhoneBook(void)
 {
 	index = 0;
@@ -27,7 +27,7 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::seekContact(void)
 {
-	int			i = 1;
+	int			i = 0;
 	int			j;
 	std::string	input;
 	
@@ -36,15 +36,15 @@ void	PhoneBook::seekContact(void)
 	else if (total)
 	{
 		std::cout << "Index | First Name | Last Name | Nickname |" << std::endl;
-		while (i <= index)
+		while (i < index)
 		{
-			contact[i].DisplayContact(i);
+			contact[i].DisplayContact(i + '0');
 			i++;
 		}
 		std::cout << "Type the index number to display contact infos: " << std::endl;
 		while (std::getline(std::cin, input))
 		{
-			j = std::stoi(input);
+			j = atoi(input.c_str());
 			if (j >= 1 && j <= index)
 				break ;
 			std::cout << "Incorrect number, try again: " << std::endl;
@@ -56,12 +56,14 @@ void	PhoneBook::seekContact(void)
 void	PhoneBook::addContact(void)
 {
 	total += 1;
-	index++;
+	if (index == 8)
+		index = 0;
 	contact[index].fillFirstName();
 	contact[index].fillLastName();
 	contact[index].fillNickName();
 	contact[index].fillNumber();
 	contact[index].fillSecret();
-
+	index++;
+	
 	return ;
 }

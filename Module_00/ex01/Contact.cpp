@@ -6,12 +6,13 @@
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 20:44:53 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/14 17:40:35 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/01/15 20:21:58 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Includes/PhoneBook.hpp"
 #include "Includes/Contact.hpp"
+#include <stdlib.h>
 
 Contact::Contact(void)
 {
@@ -23,9 +24,9 @@ Contact::~Contact(void)
 	return ;
 }
 
-void	Contact::DisplayContact(int i)
+void	Contact::DisplayContact(char i)
 {
-	std::cout << std::to_string(i) << "|";
+	std::cout << (i - 47) << "|";
 	firstname.length() <= 10 ? std::cout << std::setw(10) << firstname : std::cout << firstname.substr(0, 9).replace(9, 9, ".");
 	std::cout << "|";
 	lastname.length() <= 10 ? std::cout << std::setw(10) << lastname : std::cout <<  lastname.substr(0, 9).replace(9, 9, ".");
