@@ -4,7 +4,7 @@ Contact.cpp \
 main.cpp
 HEADERFILES = -I ./Includes
 OBJFILES = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CC = c++
 #
 

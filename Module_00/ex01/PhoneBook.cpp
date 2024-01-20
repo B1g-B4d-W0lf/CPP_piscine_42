@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:34:08 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/15 20:27:16 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:32:03 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	PhoneBook::seekContact(void)
 	else if (total)
 	{
 		std::cout << "Index | First Name | Last Name | Nickname |" << std::endl;
-		while (i < index)
+		while (i < total)
 		{
 			contact[i].DisplayContact(i + '0');
 			i++;
@@ -45,17 +45,20 @@ void	PhoneBook::seekContact(void)
 		while (std::getline(std::cin, input))
 		{
 			j = atoi(input.c_str());
-			if (j >= 1 && j <= index)
+			if (j >= 1 && j <= total)
 				break ;
 			std::cout << "Incorrect number, try again: " << std::endl;
 		}
-		contact[j].DisplayInfos();
+		if (std::cin.eof())
+			exit(0);
+		contact[j - 1].DisplayInfos();
 	}
 }
 
 void	PhoneBook::addContact(void)
 {
-	total += 1;
+	if (total < 8)
+		total += 1;
 	if (index == 8)
 		index = 0;
 	contact[index].fillFirstName();
