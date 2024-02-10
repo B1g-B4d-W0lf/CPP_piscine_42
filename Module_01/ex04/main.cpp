@@ -13,7 +13,8 @@ void	ft_sed(std::ifstream& file, std::string& s1, std::string& s2, std::string o
 		return(file.close()) ;
 
 	while (std::getline(file, str))
-		filebis = filebis + str + "\n"; 
+		filebis = filebis + str + "\n";
+	filebis.erase((filebis.length() - 1), 1);
 	while ((occ = filebis.find(s1, j)) != std::string::npos)
 	{
 		filebis.erase(occ, s1.length());
