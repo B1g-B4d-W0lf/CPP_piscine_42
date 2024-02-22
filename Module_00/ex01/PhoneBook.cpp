@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:34:08 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/20 19:32:03 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:40:55 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	PhoneBook::seekContact(void)
 			std::cout << "Incorrect number, try again: " << std::endl;
 		}
 		if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 		contact[j - 1].DisplayInfos();
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 20:44:53 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/20 19:33:56 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:50:03 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	Contact::fillFirstName(void)
 		std::cout << "Enter first name: ";
 	}
 	if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 	this->firstname = input;
 }
 
@@ -104,7 +104,7 @@ void	Contact::fillLastName(void)
 		std::cout << "Enter last name: ";
 	}
 	if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 	this->lastname = input;
 }
 
@@ -121,7 +121,7 @@ void	Contact::fillNickName(void)
 		std::cout << "Enter nickname: ";
 	}
 	if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 	this->nickname = input;
 }
 
@@ -138,7 +138,7 @@ void	Contact::fillNumber(void)
 		std::cout << "Enter phone number: ";
 	}
 	if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 	this->phonenumber = input;
 }
 
@@ -155,6 +155,6 @@ void	Contact::fillSecret(void)
 		std::cout << "Enter the secret: ";
 	}
 	if (std::cin.eof())
-			exit(0);
+			std::exit(0);
 	this->darkestsecret = input;
 }

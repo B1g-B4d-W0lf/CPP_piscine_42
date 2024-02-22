@@ -6,7 +6,7 @@
 /*   By: wfreulon <wfreulon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:08:23 by wfreulon          #+#    #+#             */
-/*   Updated: 2024/01/26 18:53:17 by wfreulon         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:41:56 by wfreulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@ static int	totalwith = 0;
 
 void	displayTime(void)
 {
-	time_t timestamp = time(NULL);
-	struct tm *time = localtime(&timestamp);
-	
-	std::cout << "[" << time->tm_year + 1900 << time->tm_mon << time->tm_mday << "_" << time->tm_hour << time->tm_min << time->tm_sec << "] ";
+	std::time_t now;
+
+    now = std::time(NULL);
+
+    std::tm *tm_info = std::localtime(&now);
+
+    char buffer[80];
+    std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", tm_info);
+    std::cout << buffer;
 }
 
 Account::Account(int initial_deposit)
