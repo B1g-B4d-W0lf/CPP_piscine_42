@@ -48,9 +48,9 @@ std::string	generate(void)
 
 int	main(void)
 {
-	Zombie	*zomb;
-	zomb = NULL;
+	randomChump(generate());
 
-	zomb->randomChump(generate());
-	delete zomb;
+	Zombie *ok;
+	ok = newZombie(generate());
+	delete ok;
 }

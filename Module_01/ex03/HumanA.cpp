@@ -5,7 +5,6 @@
 HumanA::HumanA(std::string name, Weapon& type): thing(type)
 {
 	this->name = name;
-	this->thing = type;
 	return;
 }
 

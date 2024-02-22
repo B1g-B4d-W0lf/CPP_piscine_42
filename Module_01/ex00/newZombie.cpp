@@ -1,6 +1,6 @@
 #include "Includes/Zombie.hpp"
 
-Zombie*	Zombie::newZombie(std::string name)
+Zombie*	newZombie(std::string name)
 {
 	Zombie	*zomb = new Zombie;
 

@@ -51,6 +51,6 @@ int	main(void)
 	Zombie	*zomb;
 	zomb = NULL;
 
-	zomb = zomb->zombieHorde(10, generate());
+	zomb = zombieHorde(10, generate());
 	delete[] zomb;
 }
