@@ -1,4 +1,4 @@
-#include "Fixed.hpp"
+#include "Includes/Fixed.hpp"
 
 Fixed::Fixed()
 {
@@ -14,12 +14,12 @@ Fixed::~Fixed()
 Fixed::Fixed(Fixed& bis)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	number = bis.getRawBits();
+	*this = bis;
 }
 
 Fixed&	Fixed::operator=(Fixed& bis)
 {
-	std::cout << "Copy assignement operator called on " << &bis << std::endl;
+	std::cout << "Copy assignement operator called" << std::endl;
 	number = bis.getRawBits();
 	return(*this);
 }

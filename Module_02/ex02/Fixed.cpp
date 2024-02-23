@@ -24,6 +24,76 @@ Fixed&	Fixed::operator=(const Fixed& bis)
 	return(*this);
 }
 
+bool	Fixed::operator==(const Fixed& bis) const
+{
+	return getRawBits() == bis.getRawBits();
+}
+
+bool	Fixed::operator<(const Fixed& bis) const
+{
+	return getRawBits() < bis.getRawBits();
+}
+
+bool	Fixed::operator>(const Fixed& bis) const
+{
+	return getRawBits() > bis.getRawBits();
+}
+
+bool	Fixed::operator!=(const Fixed& bis) const
+{
+	return getRawBits() != bis.getRawBits();
+}
+
+bool	Fixed::operator<=(const Fixed& bis) const
+{
+	return getRawBits() <= bis.getRawBits();
+}
+
+bool	Fixed::operator>=(const Fixed& bis) const
+{
+	return getRawBits() >= bis.getRawBits();
+}
+
+Fixed	Fixed::operator+(const Fixed& bis) const
+{
+
+}
+
+Fixed	Fixed::operator-(const Fixed& bis) const
+{
+
+}
+
+Fixed	Fixed::operator*(const Fixed& bis) const
+{
+
+}
+
+Fixed	Fixed::operator/(const Fixed& bis) const
+{
+
+}
+
+Fixed&	Fixed::operator++()
+{
+	
+}
+
+Fixed	Fixed::operator++(int)
+{
+
+}
+
+Fixed&	Fixed::operator--()
+{
+
+}
+
+Fixed	Fixed::operator--(int)
+{
+
+}
+
 Fixed::Fixed(int const i)
 {
 	std::cout << "Int constructor called" << std::endl;

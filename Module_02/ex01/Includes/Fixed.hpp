@@ -2,6 +2,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -14,12 +15,14 @@ class Fixed
 		~Fixed();
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-		float	toFloat(void);
-		int		toInt(void);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
 	private:
 		int					number;
 		static int const	bit = 8;
 };
+
+std::ostream&	operator<<(std::ostream& ob, const Fixed& fi);
 
 #endif
