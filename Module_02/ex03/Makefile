@@ -1,6 +1,8 @@
-NAME = FixerOperator
+NAME = FixerTriangle
 SRC = Fixed.cpp \
-main.cpp
+main.cpp \
+Point.cpp \
+bsp.cpp
 HEADERFILES = -I ./Includes
 OBJFILES = $(SRC:.cpp=.o)
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
