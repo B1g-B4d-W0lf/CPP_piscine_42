@@ -2,6 +2,7 @@
 
 Zombie::Zombie(void)
 {
+	std::cout << "A zombie is born." << std::endl;
 	return ;
 }
 

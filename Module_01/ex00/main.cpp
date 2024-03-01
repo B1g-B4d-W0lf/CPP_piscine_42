@@ -52,5 +52,6 @@ int	main(void)
 
 	Zombie *ok;
 	ok = newZombie(generate());
+	ok->announce();
 	delete ok;
 }

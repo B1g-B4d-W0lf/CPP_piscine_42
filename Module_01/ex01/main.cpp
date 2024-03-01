@@ -12,7 +12,7 @@ std::string	syllable(char c)
 	else if (c == '2')
 		return ("Gu");
 	else if (c == '3')
-		return ("Bla");
+		return ("Bal");
 	else if (c == '4')
 		return ("Be");
 	else if (c == '5')
@@ -52,5 +52,7 @@ int	main(void)
 	zomb = NULL;
 
 	zomb = zombieHorde(10, generate());
+	for (int i = 0; i < 10; i++)
+		zomb[i].announce();
 	delete[] zomb;
 }
