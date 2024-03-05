@@ -4,11 +4,11 @@
 int	main()
 {
 	ScavTrap	one("Lucius");
-	ScavTrap	two("Malfoy");
+	ScavTrap	two("Draco");
 	ScavTrap	three(one);
 
 	std::cout << "\n ### STANDARD TEST ### \n" << std::endl;
-	one.attack("Malfoy");
+	one.attack("Draco");
 	two.attack("Lucius");
 	three.guardGate();
 	std::cout << std::endl;

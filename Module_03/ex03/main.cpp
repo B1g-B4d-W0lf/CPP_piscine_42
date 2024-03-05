@@ -1,11 +1,11 @@
 #include "Includes/ClapTrap.hpp"
-#include "Includes/FragTrap.hpp"
+#include "Includes/DiamondTrap.hpp"
 
 int	main()
 {
-	FragTrap	one("Lucius");
-	FragTrap	two("Draco");
-	FragTrap	three(one);
+	DiamondTrap	one("Lucius");
+	DiamondTrap	two("Draco");
+	DiamondTrap	three(one);
 
 	std::cout << "\n ### STANDARD TEST ### \n" << std::endl;
 	one.attack("Draco");

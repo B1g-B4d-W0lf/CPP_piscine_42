@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(std::string naming)
 	setep(50);
 	setattp(20);
 	if (naming.empty())
-		setname(name);
+		setname(getname());
 	else
 		setname(naming);
 }
@@ -30,23 +30,23 @@ ScavTrap::ScavTrap(ScavTrap& bis)
 
 ScavTrap& ScavTrap::operator=(ScavTrap& bis)
 {
-	setname(bis.name);
-	sethp(bis.hp);
-	setep(bis.ep);
-	setattp(bis.attp);
+	setname(bis.getname());
+	sethp(bis.gethp());
+	setep(bis.getep());
+	setattp(bis.getattp());
 
 	return (*this);
 }
 
 void ScavTrap::attack(const std::string& target)
 {
-if (ep > 0 && hp > 0)
+if (getep() > 0 && gethp() > 0)
 	{
-		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attp << " of damage!" << std::endl;
-		ep--;
+		std::cout << "ScavTrap " << getname() << " attacks " << target << ", causing " << getattp() << " of damage!" << std::endl;
+		setep(getep() - 1);
 	}
 	else 
-		std::cout << "ScavTrap " << name << " is too exhausted to attack " << target << "!" << std::endl;
+		std::cout << "ScavTrap " << getname() << " is too exhausted to attack " << target << "!" << std::endl;
 }
 
 void ScavTrap::guardGate()

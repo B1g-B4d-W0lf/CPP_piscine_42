@@ -28,7 +28,7 @@ class ClapTrap
 		void setep(int newep);
 		void setattp(int newattp);
 
-	private:
+	protected:
 		std::string				name;
 		unsigned int			hp;
 		unsigned int			ep;

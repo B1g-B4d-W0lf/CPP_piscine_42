@@ -3,11 +3,11 @@
 int	main()
 {
 	ClapTrap	one("Lucius");
-	ClapTrap	two("Malfoy");
+	ClapTrap	two("Draco");
 	ClapTrap	three(one);
 
 	std::cout << "\n ### STANDARD TEST ### \n" << std::endl;
-	one.attack("Malfoy");
+	one.attack("Draco");
 	two.takeDamage(0);
 	two.attack("Lucius");
 	std::cout << "\n ### JUST FOR FUN TEST ### \n" << std::endl;
