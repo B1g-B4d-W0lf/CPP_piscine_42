@@ -40,18 +40,18 @@ ScavTrap& ScavTrap::operator=(ScavTrap& bis)
 
 void ScavTrap::attack(const std::string& target)
 {
-if (ep > 0 && hp > 0)
+	if (ep > 0 && hp > 0)
 	{
-		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attp << " of damage!" << std::endl;
+		std::cout << name << " savagely pounce on " << target << ", causing " << attp << " of damage!" << std::endl;
 		ep--;
 	}
 	else 
-		std::cout << "ScavTrap " << name << " is too exhausted to attack " << target << "!" << std::endl;
+		std::cout << name << " is spent and can no longer attack " << target << "!" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate Keeper mode" << std::endl;
+	std::cout << name << " is now in Gate Keeper mode" << std::endl;
 	std::cout << "*YOU SHALL NOT PASS*" << std::endl;
 }
 

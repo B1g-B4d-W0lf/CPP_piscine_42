@@ -40,6 +40,6 @@ FragTrap& FragTrap::operator=(FragTrap& bis)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << name << " wants a high five !" << std::endl;
+	std::cout << name << " wants a high five !" << std::endl;
 }
 

@@ -37,33 +37,33 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (ep > 0 && hp > 0)
 	{
-		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attp << " of damage!" << std::endl;
+		std::cout << name << " attacks " << target << ", causing " << attp << " of damage!" << std::endl;
 		ep --;
 	}
 	else 
-		std::cout << "ClapTrap " << name << " is too exhausted to attack " << target << "!" << std::endl;
+		std::cout << name << " is too exhausted to attack " << target << "!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (hp >= amount)
 	{
-		std::cout << "ClapTrap " << name << " takes " << amount << " damage!" << std::endl;
+		std::cout << name << " takes " << amount << " damage!" << std::endl;
 		hp -= amount;
 	}
 	if (hp == 0)
-		std::cout << "ClapTrap " << name << " is defeated.." << std::endl;
+		std::cout << name << " is defeated.." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (ep > 0 && hp > 0)
 	{
-		std::cout << "ClapTrap " << name << " has regained " << amount << " of hit points!" << std::endl;
+		std::cout << name << " has regained " << amount << " of hit points!" << std::endl;
 		hp += amount;
 	}
 	else 
-		std::cout << "ClapTrap " << name << " cannot be salvaged.." << std::endl;
+		std::cout << name << " cannot be salvaged.." << std::endl;
 }
 
 //######################## SET & GET ########################

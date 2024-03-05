@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string naming)
 	setep(100);
 	setattp(30);
 	if (naming.empty())
-		setname(getname());
+		setname(name);
 	else
 		setname(naming);
 }
@@ -40,6 +40,6 @@ FragTrap& FragTrap::operator=(FragTrap& bis)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << getname() << " wants a high five !" << std::endl;
+	std::cout << name << " wants a high five !" << std::endl;
 }
 

@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(std::string naming)
 	setep(50);
 	setattp(20);
 	if (naming.empty())
-		setname(getname());
+		setname(name);
 	else
 		setname(naming);
 }
@@ -30,28 +30,28 @@ ScavTrap::ScavTrap(ScavTrap& bis)
 
 ScavTrap& ScavTrap::operator=(ScavTrap& bis)
 {
-	setname(bis.getname());
-	sethp(bis.gethp());
-	setep(bis.getep());
-	setattp(bis.getattp());
+	setname(bis.name);
+	sethp(bis.hp);
+	setep(bis.ep);
+	setattp(bis.attp);
 
 	return (*this);
 }
 
 void ScavTrap::attack(const std::string& target)
 {
-if (getep() > 0 && gethp() > 0)
+	if (ep > 0 && hp > 0)
 	{
-		std::cout << "ScavTrap " << getname() << " attacks " << target << ", causing " << getattp() << " of damage!" << std::endl;
-		setep(getep() - 1);
+		std::cout << name << " savagely pounce on " << target << ", causing " << attp << " of damage!" << std::endl;
+		ep--;
 	}
 	else 
-		std::cout << "ScavTrap " << getname() << " is too exhausted to attack " << target << "!" << std::endl;
+		std::cout << name << " is spent and can no longer attack " << target << "!" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate Keeper mode" << std::endl;
+	std::cout << name << " is now in Gate Keeper mode" << std::endl;
 	std::cout << "*YOU SHALL NOT PASS*" << std::endl;
 }
 
