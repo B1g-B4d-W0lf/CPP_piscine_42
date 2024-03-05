@@ -22,7 +22,7 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "Destructor has destroyed a DiamondTrap" << std::endl;
 }
 
-DiamondTrap(DiamondTrap& bis)
+DiamondTrap::DiamondTrap(DiamondTrap& bis)
 {
 	std::cout << "Copy constructor has made a DiamondTrap" << std::endl;
 	*this = bis;
@@ -40,5 +40,5 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap& bis)
 
 void DiamondTrap::whoAmI()
 {
-
+	//std::cout << "I am both Claptrap " << ClapTrap(name) << " and DiamondTrap " << name << std::endl;
 }

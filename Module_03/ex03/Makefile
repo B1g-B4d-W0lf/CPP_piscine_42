@@ -1,4 +1,4 @@
-NAME = FragFight
+NAME = DiamondFight
 SRC = ClapTrap.cpp \
 main.cpp \
 FragTrap.cpp \
