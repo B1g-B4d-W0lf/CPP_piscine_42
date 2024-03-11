@@ -8,13 +8,14 @@ DiamondTrap::DiamondTrap()
 DiamondTrap::DiamondTrap(std::string naming)
 {
 	std::cout << "Naming constructor has made a DiamondTrap" << std::endl;
-	sethp(100);
-	setep(50);
-	setattp(30);
+	hp = this->FragTrap::hp;
+	ep = this->ScavTrap::ep;
+	attp = this->FragTrap::attp;
 	if (naming.empty())
 		setname(name);
 	else
 		setname(naming);
+	name = "Diamond-" + naming;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -30,7 +31,7 @@ DiamondTrap::DiamondTrap(DiamondTrap& bis)
 
 DiamondTrap& DiamondTrap::operator=(DiamondTrap& bis)
 {
-	setname(bis.name);
+	setname(bis.ClapTrap::name);
 	sethp(bis.hp);
 	setep(bis.ep);
 	setattp(bis.attp);
@@ -40,5 +41,5 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap& bis)
 
 void DiamondTrap::whoAmI()
 {
-	//std::cout << "I am both Claptrap " << ClapTrap(name) << " and DiamondTrap " << name << std::endl;
+	std::cout << "I am both ClapTrap " << ClapTrap::name << " and DiamondTrap " << name << std::endl;
 }

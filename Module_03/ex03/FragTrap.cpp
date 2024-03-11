@@ -3,6 +3,10 @@
 FragTrap::FragTrap()
 {
 	std::cout << "Default constructor has made a FragTrap" << std::endl;
+	sethp(100);
+	setep(100);
+	setattp(30);
+	setname("DefaultFrag");
 }
 
 FragTrap::FragTrap(std::string naming)

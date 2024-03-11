@@ -20,8 +20,10 @@ int	main()
 	two.takeDamage(20);
 	two.attack("Lucius");
 	one.takeDamage(20);
+	two.guardGate();
 	three.highFivesGuys();
 	status(two.getname(), two.getep(), two.getattp(), two.gethp());
+	two.whoAmI();
 	std::cout << "\n ### JUST FOR FUN TEST ### \n" << std::endl;
 	one.takeDamage(80);
 	one.beRepaired(10);

@@ -3,6 +3,10 @@
 ScavTrap::ScavTrap()
 {
 	std::cout << "Default constructor has made a ScavTrap" << std::endl;
+	sethp(100);
+	setep(50);
+	setattp(20);
+	setname("DefaultScav");
 }
 
 ScavTrap::ScavTrap(std::string naming)
@@ -54,4 +58,3 @@ void ScavTrap::guardGate()
 	std::cout << name << " is now in Gate Keeper mode" << std::endl;
 	std::cout << "*YOU SHALL NOT PASS*" << std::endl;
 }
-
