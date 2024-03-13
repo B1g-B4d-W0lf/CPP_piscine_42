@@ -54,6 +54,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 		std::cout << name << " takes " << amount << " damage!" << std::endl;
 		hp -= amount;
 	}
+	else if (hp < amount)
+	{
+		std::cout << name << " takes " << amount << " damage!" << std::endl;
+		hp = 0;
+	}
 	if (hp == 0)
 		std::cout << name << " is defeated.." << std::endl;
 }

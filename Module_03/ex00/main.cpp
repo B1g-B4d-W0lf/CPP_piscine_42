@@ -16,7 +16,7 @@ int	main()
 
 	std::cout << "\n ### STANDARD TEST ### \n" << std::endl;
 	one.attack("Draco");
-	two.takeDamage(0);
+	two.takeDamage(one.getattp());
 	two.attack("Lucius");
 	status(one.getname(), one.getep(), one.getattp(), one.gethp());
 	std::cout << "\n ### JUST FOR FUN TEST ### \n" << std::endl;

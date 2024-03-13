@@ -17,13 +17,13 @@ int	main()
 
 	std::cout << "\n ### STANDARD TEST ### \n" << std::endl;
 	one.attack("Draco");
-	two.takeDamage(20);
+	two.takeDamage(one.getattp());
 	two.attack("Lucius");
-	one.takeDamage(20);
+	one.takeDamage(two.getattp());
 	three.guardGate();
 	status(two.getname(), two.getep(), two.getattp(), two.gethp());
 	std::cout << "\n ### JUST FOR FUN TEST ### \n" << std::endl;
-	one.takeDamage(80);
+	one.takeDamage(100);
 	one.beRepaired(10);
 	three.beRepaired(20);
 	status(three.getname(), three.getep(), three.getattp(), three.gethp());
