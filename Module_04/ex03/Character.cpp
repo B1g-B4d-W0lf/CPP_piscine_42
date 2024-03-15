@@ -1,0 +1,96 @@
+#include "Includes/Character.hpp"
+
+Character::Character()
+{
+	std::cout << "Character constructor called" << std::endl;
+	name = "Default";
+	in = 0;
+	for (int i = 0; i < 4; i++)
+		items[i] = NULL;
+}
+
+Character::Character(std::string naming)
+{
+	std::cout << "Character naming constructor called" << std::endl;
+	name = naming;
+	in = 0;
+	for (int i = 0; i < 4; i++)
+		items[i] = NULL;
+}
+
+Character::~Character()
+{
+	std::cout << "Character destructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (items[i])
+			delete items[i];
+	}
+}
+
+Character::Character(Character& bis)
+{
+	std::cout << "Character copy constructor called" << std::endl;
+	*this = bis;
+}
+
+Character& Character::operator=(Character& bis)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->items[i])
+			delete items[i];
+		if (bis.getInventory(i))
+			this->items[i] = bis.getInventory(i)->clone();
+	}
+	name = bis.getName() + "Copy";
+	return (*this);
+}
+
+std::string const & Character::getName() const
+{
+	return (name);
+}
+
+void Character::equip(AMateria* m)
+{
+	if (m)
+	{
+		if (in < 4)
+		{
+			items[in] = m;
+			in++;
+			return ;
+		}
+		if (in == 4)
+			std::cout << "Inventory is full." << std::endl;
+	}
+	delete m;
+}
+
+void Character::unequip(int idx)
+{
+	if (items[idx])
+	{
+		items[idx] = NULL;
+		in --;
+	}
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+	if (this->items[idx])
+	{
+		std::cout << "in there" << std::endl;
+		items[idx]->use(target);
+		delete items[idx];
+		items[idx] = NULL;
+		in--;
+	}
+	
+}
+
+AMateria* Character::getInventory(int index)
+{
+	return (items[index]);
+}
