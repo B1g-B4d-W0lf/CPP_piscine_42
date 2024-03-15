@@ -1,7 +1,12 @@
 #include "Includes/Character.hpp"
 
+int	Character::nbc = 0;
+int Character::fl = 0;
+AMateria* Character::floor[50] = {NULL};
+
 Character::Character()
 {
+	nbc++;
 	std::cout << "Character constructor called" << std::endl;
 	name = "Default";
 	in = 0;
@@ -11,6 +16,7 @@ Character::Character()
 
 Character::Character(std::string naming)
 {
+	nbc++;
 	std::cout << "Character naming constructor called" << std::endl;
 	name = naming;
 	in = 0;
@@ -25,6 +31,15 @@ Character::~Character()
 	{
 		if (items[i])
 			delete items[i];
+	}
+	nbc--;
+	if (nbc == 0)
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			if (floor[i])
+				delete floor[i];
+		}
 	}
 }
 
@@ -70,8 +85,23 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
+	int i = 0;
 	if (items[idx])
 	{
+		while (floor[i] != NULL && i < 50)
+			i++;
+		if (i != 50)
+		{
+			floor[i] = items[idx];
+		}
+		else if (i == 50)
+		{
+			delete floor[fl];
+			floor[fl] = items[idx];
+			fl++;
+			if (fl == 50)
+				fl = 0;
+		}
 		items[idx] = NULL;
 		in --;
 	}

@@ -19,6 +19,10 @@ class Character : public ICharacter
 		void use(int idx, ICharacter& target);
 		AMateria* getInventory(int index);
 
+		static AMateria		*floor[50];
+		static int			fl;
+		static int			nbc;
+
 	private :
 		AMateria	*items[4];
 		std::string	name;
