@@ -2,18 +2,18 @@
 
 Cure::Cure()
 {
-	std::cout << "Cure constructor called" << std::endl;
+	//std::cout << "Cure constructor called" << std::endl;
 	type = "cure";
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor called" << std::endl;
+	//std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure::Cure(Cure& bis)
 {
-	std::cout << "Cure copy constructor called" << std::endl;
+	//std::cout << "Cure copy constructor called" << std::endl;
 	*this = bis;
 }
 

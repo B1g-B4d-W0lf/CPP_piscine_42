@@ -22,3 +22,8 @@ WrongCat& WrongCat::operator=(WrongCat& bis)
 	type = bis.type;
 	return (*this);
 }
+
+void WrongCat::makeSound() const
+{
+	std::cout << "WrongCat is making Non-Cat noise" << std::endl;
+}

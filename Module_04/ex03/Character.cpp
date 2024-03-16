@@ -17,7 +17,7 @@ Character::Character()
 Character::Character(std::string naming)
 {
 	nbc++;
-	std::cout << "Character naming constructor called" << std::endl;
+	//std::cout << "Character naming constructor called" << std::endl;
 	name = naming;
 	in = 0;
 	for (int i = 0; i < 4; i++)
@@ -26,7 +26,7 @@ Character::Character(std::string naming)
 
 Character::~Character()
 {
-	std::cout << "Character destructor called" << std::endl;
+	//std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (items[i])
@@ -45,7 +45,7 @@ Character::~Character()
 
 Character::Character(Character& bis)
 {
-	std::cout << "Character copy constructor called" << std::endl;
+	//std::cout << "Character copy constructor called" << std::endl;
 	*this = bis;
 }
 
@@ -75,6 +75,7 @@ void Character::equip(AMateria* m)
 		{
 			items[in] = m;
 			in++;
+			std::cout << name << " equiped " << m->getType() << std::endl;
 			return ;
 		}
 		if (in == 4)
@@ -88,6 +89,7 @@ void Character::unequip(int idx)
 	int i = 0;
 	if (items[idx])
 	{
+		std::cout << name << " unequiped " << items[idx]->getType() << std::endl;
 		while (floor[i] != NULL && i < 50)
 			i++;
 		if (i != 50)
@@ -111,7 +113,6 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (this->items[idx])
 	{
-		std::cout << "in there" << std::endl;
 		items[idx]->use(target);
 		delete items[idx];
 		items[idx] = NULL;

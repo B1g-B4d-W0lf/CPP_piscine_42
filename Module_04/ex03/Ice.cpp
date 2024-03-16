@@ -2,18 +2,18 @@
 
 Ice::Ice() 
 {
-	std::cout << "Ice constructor called" << std::endl;
+	//std::cout << "Ice constructor called" << std::endl;
 	type = "ice";
 }
 
 Ice::~Ice()
 {
-	std::cout << "Ice destructor called" << std::endl;
+	//std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice::Ice(Ice& bis)
 {
-	std::cout << "Ice copy constructor called" << std::endl;
+	//std::cout << "Ice copy constructor called" << std::endl;
 	*this = bis;
 }
 

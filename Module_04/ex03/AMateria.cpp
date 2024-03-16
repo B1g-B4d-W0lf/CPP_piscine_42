@@ -2,25 +2,19 @@
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria constructor called" << std::endl;
+	//std::cout << "AMateria constructor called" << std::endl;
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor called" << std::endl;
+	//std::cout << "AMateria destructor called" << std::endl;
 }
 
 AMateria::AMateria(AMateria& bis)
 {
-	std::cout << "AMateria copy constructor called" << std::endl;
+	//std::cout << "AMateria copy constructor called" << std::endl;
 	*this = bis;
 }
-
-// AMateria& AMateria::operator=(AMateria& bis)
-// {
-// 	type = bis.type;
-// 	return (*this);
-// }
 
 AMateria::AMateria(std::string const & type)
 {

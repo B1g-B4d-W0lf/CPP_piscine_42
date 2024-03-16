@@ -2,7 +2,7 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource constructor called" << std::endl;
+	//std::cout << "MateriaSource constructor called" << std::endl;
 	in = 0;
 	for (int i = 0; i < 4; i++)
 		stock[i] = NULL;
@@ -10,7 +10,7 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource destructor called" << std::endl;
+	//std::cout << "MateriaSource destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (stock[i])
@@ -20,7 +20,7 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(MateriaSource& bis)
 {
-	std::cout << "MateriaSource copy constructor called" << std::endl;
+	//std::cout << "MateriaSource copy constructor called" << std::endl;
 	*this = bis;
 }
 

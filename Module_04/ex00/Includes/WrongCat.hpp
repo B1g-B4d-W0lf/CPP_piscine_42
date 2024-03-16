@@ -13,6 +13,7 @@ class WrongCat : public WrongAnimal
 		WrongCat& operator=(WrongCat& bis);
 
 // FUNCTIONS
+		void makeSound() const;
 
 };
 
