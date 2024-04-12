@@ -19,14 +19,14 @@ class ScalarConverter
 		ScalarConverter(ScalarConverter& bis);
 		ScalarConverter& operator=(ScalarConverter& bis);
 
-		static bool doubleCheck(std::string str, std::string type);
-		static std::string identifier(std::string str);
-		static void isChar(std::string str);
-		static void isFloat(float f);
-		static void isDouble(double d);
-		static void isInt(int i);
-		static void isSpeDouble(std::string str);
-		static void isSpeFloat(std::string str);
+		bool doubleCheck(std::string str, std::string type);
+		std::string identifier(std::string str);
+		void isChar(std::string str);
+		void isFloat(float f);
+		void isDouble(double d);
+		void isInt(int i);
+		void isSpeDouble(std::string str);
+		void isSpeFloat(std::string str);
 		
 };
 

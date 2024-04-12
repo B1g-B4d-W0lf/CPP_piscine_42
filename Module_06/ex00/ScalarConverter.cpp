@@ -23,14 +23,15 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter& bis)
 
 void ScalarConverter::convert(std::string& str)
 {
-	std::string	type;
-	char 		*end;
-	int			i = 0;
-	float		f = 0.0f;
-	double		d = 0.0;
+	std::string		type;
+	char 			*end;
+	int				i = 0;
+	float			f = 0.0f;
+	double			d = 0.0;
+	ScalarConverter	scal;
 
-	type = ScalarConverter::identifier(str);
-	if (!ScalarConverter::doubleCheck(str, type))
+	type = scal.identifier(str);
+	if (!scal.doubleCheck(str, type))
 	{
 		std::cout << "Could not convert input <" << str << ">." << std::endl;
 		// std::cout << str << " " << type << std::endl;
@@ -40,30 +41,30 @@ void ScalarConverter::convert(std::string& str)
 	if (type == "int")
 	{
 		i = std::atoi(str.c_str());
-		ScalarConverter::isInt(i);
+		scal.isInt(i);
 	}
 	else if (type == "float" || type == "spe float")
 	{
 		if (type.find("spe") != std::string::npos)
-			ScalarConverter::isSpeFloat(str);
+			scal.isSpeFloat(str);
 		else
 		{
 			f = std::strtof(str.c_str(), &end);
-			ScalarConverter::isFloat(f);
+			scal.isFloat(f);
 		}
 	}
 	else if (type == "double" || type == "spe double")
 	{
 		if (type.find("spe") != std::string::npos)
-			ScalarConverter::isSpeDouble(str);
+			scal.isSpeDouble(str);
 		else
 		{
 			d = std::strtod(str.c_str(), &end);
-			ScalarConverter::isDouble(d);
+			scal.isDouble(d);
 		}
 	}
 	if (type == "char")
-		ScalarConverter::isChar(str);
+		scal.isChar(str);
 	// std::cout << str << " " << type << std::endl;
 	return ;
 }

@@ -19,7 +19,7 @@ int main(int ac, char **av)
 		std::cerr << e.what() << std::endl;
 		return (0);
 	}
-
+	BitcoinExchange::compare(ifs, source);
 
 	return (0);
 

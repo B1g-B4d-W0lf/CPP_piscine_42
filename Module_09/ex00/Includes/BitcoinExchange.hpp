@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 
 class BitcoinExchange
 {
@@ -15,6 +16,8 @@ class BitcoinExchange
 		BitcoinExchange& operator=(BitcoinExchange& bis);
 		static void compare(std::ifstream& file, std::map <std::string, float> source);
 		static std::map<std::string, float> sourceparse();
+		static float parsechange(std::string temp);
+		static std::string parsedate(std::string temp);
 	
 		class UnvalidFormat : public std::exception
 		{

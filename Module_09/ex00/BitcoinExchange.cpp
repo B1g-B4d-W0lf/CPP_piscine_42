@@ -22,22 +22,43 @@ BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange& bis)
 	return (*this);
 }
 
-std::string parsedate(std::string temp)
+std::string BitcoinExchange::parsedate(std::string temp)
 {
-	char		*date = NULL;
-	
+	char		date[11];
+	std::string	final;
+	std::string	month;
+	std::string	day;
+	std::string	year;
+
 	if (temp.empty() || temp.size() < 12)
 		throw BitcoinExchange::UnvalidContent();
 	temp.copy(date, 10, 0);
-	std::cout << temp << std::endl;
+	final = date;
+	year = final.substr(0,4);
+	month = final.substr(5,2);
+	day = final.substr(8,2);
 
-	return (temp);
+	if (atoi(year.c_str()) < 2000 || atoi(year.c_str()) > 2023)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 31)
+		throw BitcoinExchange::UnvalidContent();
+
+	return (date);
 }
 
-float parsechange(std::string temp)
+float BitcoinExchange::parsechange(std::string temp)
 {
-	(void) temp;
-	return (0);
+	float		change;
+	std::string		chg;
+	char		*endptr;
+
+	chg = temp.substr(11);
+	change = strtof(chg.c_str(), &endptr);
+	if (endptr[0] != '\0' || change < 0)
+		throw BitcoinExchange::UnvalidContent();
+	return (change);
 }
 
 std::map<std::string, float> BitcoinExchange::sourceparse()
