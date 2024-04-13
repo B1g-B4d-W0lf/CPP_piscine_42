@@ -18,12 +18,8 @@ class BitcoinExchange
 		static std::map<std::string, float> sourceparse();
 		static float parsechange(std::string temp);
 		static std::string parsedate(std::string temp);
+		static void testline(std::string line, std::map<std::string, float> source);
 	
-		class UnvalidFormat : public std::exception
-		{
-			public :
-				virtual const char *what() const throw();
-		};
 		class UnvalidContent : public std::exception
 		{
 			public :
