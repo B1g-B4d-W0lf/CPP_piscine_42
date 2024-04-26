@@ -31,13 +31,15 @@ void ScalarConverter::convert(std::string& str)
 	ScalarConverter	scal;
 
 	type = scal.identifier(str);
-	if (!scal.doubleCheck(str, type))
+	if (type != "spe double" && type != "spe float")
 	{
-		std::cout << "Could not convert input <" << str << ">." << std::endl;
-		// std::cout << str << " " << type << std::endl;
-		return ;
+		if (!scal.doubleCheck(str, type))
+		{
+			std::cout << "Could not convert input <" << str << ">." << std::endl;
+			// std::cout << str << " " << type << std::endl;
+			return ;
+		}
 	}
-
 	if (type == "int")
 	{
 		i = std::atoi(str.c_str());
