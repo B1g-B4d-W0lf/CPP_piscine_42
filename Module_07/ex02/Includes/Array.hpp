@@ -44,7 +44,7 @@ class Array
 
 		T& operator[](unsigned int n)
 		{
-			if (n > _size)
+			if (n >= _size || n < 0 || array == NULL)
 				throw ErrorTabException();
 			return (array[n]);
 		}

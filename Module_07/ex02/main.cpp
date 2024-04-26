@@ -1,18 +1,22 @@
 #include "Includes/Array.hpp"
 #include <iostream>
+#include <complex>
 
 int main()
 {
-	char c = 'a';
-	int *j = new int();
-	Array<char>	a(7);
-	Array<int>	b(6);
-	Array<int>	empty;
+	char						c = 'a';
+	std::complex<int>			j = 0;
+	Array<char>					a(7);
+	Array<std::complex<int> >	b(6);
+	Array<std::complex<int> >	empty;
 
-	std::cout << *j << std::endl;
 	for (unsigned int i = 0; i < a.size(); i++)
 	{
 		a[i] = c++;
+	}
+	for (unsigned int i = 0; i < b.size(); i++)
+	{
+		b[i] = j;
 	}
 	a.printarray();
 	std::cout << std::endl;
