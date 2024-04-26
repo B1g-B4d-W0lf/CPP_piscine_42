@@ -43,12 +43,17 @@ void Span::addNumber(int i)
 	index++;
 }
 
-void Span::addMore(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void Span::addMore(int range)
 {
-	if (index + std::distance(begin, end) > N)
+	std::vector<int>			adding;
+
+	srand(time(NULL));
+	for (int i = 0; i < range; i++)
+		adding.push_back(rand());
+	if (index + std::distance(adding.begin(), adding.end()) > N)
 		throw SpanIsFull();
-	vec.insert(vec.end(), begin, end);
-	index += std::distance(begin, end);
+	vec.insert(vec.end(), adding.begin(), adding.end());
+	index += std::distance(adding.begin(), adding.end());
 }
 
 bool compare(int a, int b)

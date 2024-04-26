@@ -1,6 +1,4 @@
 #include "Includes/Span.hpp"
-#include <cstdlib>
-#include <ctime>
 
 int main()
 {
@@ -23,15 +21,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		std::vector<int>			adding;
 		Span 						sp(15000);
 
-		srand(time(NULL));
-		sp.addNumber(rand());
-		sp.addNumber(rand());
-		for (int i = 0; i < 14998; i++)
-			adding.push_back(rand());
-		sp.addMore(adding.begin(), adding.end());
+		sp.addMore(1500);
 
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;

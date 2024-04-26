@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class ErrorNotFound : public std::exception
 {
@@ -18,12 +19,9 @@ void	easyfind(T& con, int n)
 {
 	typename T::iterator	it;
 
-	for (it = con.begin(); it != con.end(); it++)
-	{
-		// std::cout << *it << std::endl;
- 		if (*it == n)
-			return ;
-	}
+	it = std::find( con.begin(), con.end(), n);
+	if (*it == n)
+		return ;
 	throw ErrorNotFound();
 }
 

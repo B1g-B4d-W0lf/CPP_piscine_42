@@ -15,6 +15,7 @@ int main()
 	// }
 	// return (0);
 	MutantStack<int> mstack;
+	MutantStack<int> bis;
 
 	std::cout << "MutantStack" << std::endl;
 
@@ -23,6 +24,7 @@ int main()
 	std::cout << mstack.top() << std::endl;
 	mstack.pop();
 	std::cout << mstack.size() << std::endl;
+	std::cout << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
@@ -37,6 +39,17 @@ int main()
 	++it;
 	}
 	std::stack<int> s(mstack);
+	std::cout << std::endl;
+	bis = mstack;
+	MutantStack<int>::iterator itr = bis.begin();
+	MutantStack<int>::iterator iter = bis.end();
+	++itr;
+	--itr;
+	while (itr != iter)
+	{
+	std::cout << *itr << std::endl;
+	++itr;
+	}
 
 	std::cout << std::endl;
 	std::cout << "Vecteur" << std::endl;
