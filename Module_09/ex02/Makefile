@@ -1,7 +1,7 @@
-NAME		= 				RPN
+NAME		= 				PmergeMe
 
 SRC			=				main.cpp \
-							RPN.cpp
+							PmergeMe.cpp
 
 HEADERFILES	= 				-I ./Includes
 OBJFILES	= 				$(SRC:.cpp=.o)
