@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 #include <deque>
 #include <cstdlib>
 #include <algorithm>

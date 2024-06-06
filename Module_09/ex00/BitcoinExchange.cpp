@@ -147,7 +147,7 @@ void BitcoinExchange::testline(std::string line, std::map<std::string, float> so
 		throw std::out_of_range ("Error : bad input => " + line);
 	if (bit < 0)
 		throw std::out_of_range ("Error : not a positive number");
-	if (bit > 100)
+	if (bit > 2000)
 		throw std::out_of_range ("Error : too large a number");
 
 	if (gooddate == "NotNeeded")
