@@ -30,7 +30,7 @@ std::string BitcoinExchange::parsedate(std::string temp)
 	std::string	day;
 	std::string	year;
 
-	if (temp.empty() || temp.size() < 12)
+	if (temp.empty() || temp.size() < 12 || temp[4] != '-' || temp[7] != '-')
 		throw BitcoinExchange::UnvalidContent();
 	temp.copy(date, 10, 0);
 	final = date;
@@ -43,6 +43,18 @@ std::string BitcoinExchange::parsedate(std::string temp)
 	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		throw BitcoinExchange::UnvalidContent();
 	if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 31)
+		throw BitcoinExchange::UnvalidContent();
+	if ((atoi(month.c_str()) == 2) && ((atoi(year.c_str()) % 4) != 0) && (atoi(day.c_str()) > 28))
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) == 2 && (atoi(year.c_str()) % 4) == 0 && atoi(day.c_str()) > 29)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) == 4 && atoi(day.c_str()) >= 31)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) == 6 && atoi(day.c_str()) >= 31)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) == 9 && atoi(day.c_str()) >= 31)
+		throw BitcoinExchange::UnvalidContent();
+	if (atoi(month.c_str()) == 11 && atoi(day.c_str()) >= 31)
 		throw BitcoinExchange::UnvalidContent();
 
 	return (date);
@@ -76,7 +88,7 @@ std::map<std::string, float> BitcoinExchange::sourceparse()
 	{
 		date = parsedate(temp);
 		change = parsechange(temp);
-		(void) change;
+		// (void) change;
 		source[date] = change;
 	}
 
@@ -95,7 +107,7 @@ void BitcoinExchange::testline(std::string line, std::map<std::string, float> so
 	std::string	day;
 	std::string	year;
 
-	if (line.find('|', pos) == std::string::npos || line.size() < 14)
+	if (line.find('|', pos) == std::string::npos || line.size() < 14 || line[4] != '-' || line[7] != '-')
 		throw std::out_of_range ("Error : bad input => " + line);
 
 	date = line.substr(0, 10);
@@ -107,6 +119,18 @@ void BitcoinExchange::testline(std::string line, std::map<std::string, float> so
 	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		throw std::out_of_range ("Error : bad input => " + line);
 	if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 31)
+		throw std::out_of_range ("Error : bad input => " + line);
+	if ((atoi(month.c_str()) == 2) && ((atoi(year.c_str()) % 4) != 0) && (atoi(day.c_str()) > 28))
+		throw std::out_of_range ("Error : bad input => " + line);
+	if (atoi(month.c_str()) == 2 && (atoi(year.c_str()) % 4) == 0 && atoi(day.c_str()) > 29)
+		throw std::out_of_range ("Error : bad input => " + line);
+	if (atoi(month.c_str()) == 4 && atoi(day.c_str()) >= 31)
+		throw std::out_of_range ("Error : bad input => " + line);
+	if (atoi(month.c_str()) == 6 && atoi(day.c_str()) >= 31)
+		throw std::out_of_range ("Error : bad input => " + line);
+	if (atoi(month.c_str()) == 9 && atoi(day.c_str()) >= 31)
+		throw std::out_of_range ("Error : bad input => " + line);
+	if (atoi(month.c_str()) == 11 && atoi(day.c_str()) >= 31)
 		throw std::out_of_range ("Error : bad input => " + line);
 	if (source.find(date) == source.end())
 	{
