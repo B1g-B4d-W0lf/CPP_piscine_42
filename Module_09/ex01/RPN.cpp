@@ -54,7 +54,10 @@ void	RPN::parse(std::string arg)
 			Switching(a, b, arg[i]);
 		}
 	}
-	std::cout << "result is : " << rpn.top() << std::endl;
+	if (rpn.size() != 1)
+		std::cout << "Calcul is unfinished, not enough operators." << std::endl;
+	else
+		std::cout << "result is : " << rpn.top() << std::endl;
 }
 
 void RPN::Switching(int a, int b, char s)
